@@ -13,8 +13,3 @@ my_dialog::~my_dialog()
 {
   delete ui;
 }
-
-void my_dialog::keyPressEvent(QKeyEvent *e)
-{
-  QDialog::keyPressEvent(e);
-}

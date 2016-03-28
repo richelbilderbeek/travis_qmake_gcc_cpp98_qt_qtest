@@ -14,7 +14,6 @@ class my_dialog : public QDialog
 public:
   explicit my_dialog(QWidget *parent = 0);
   ~my_dialog();
-  void keyPressEvent(QKeyEvent *e);
 
 private:
   Ui::my_dialog *ui;

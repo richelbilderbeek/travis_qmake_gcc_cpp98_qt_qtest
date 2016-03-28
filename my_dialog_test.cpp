@@ -10,8 +10,31 @@ void my_dialog_test::close_with_alt_c()
   //Need 100 milliseconds on fast computer
   //Need 1000 milliseconds on Travis CI
   QTest::keyClick(&d,Qt::Key_C,Qt::AltModifier, 1000);
-  QVERIFY(!d.isVisible());
+  QVERIFY(d.isHidden());
+}
 
+/*
+void my_dialog_test::close_with_alt_f4()
+{
+  my_dialog d;
+  d.show();
+  QVERIFY(d.isVisible());
+  //Need 100 milliseconds on fast computer
+  //Need 1000 milliseconds on Travis CI
+  QTest::keyClick(&d,Qt::Key_F4,Qt::AltModifier, 100);
+  QVERIFY(d.isHidden());
+}
+*/
+
+void my_dialog_test::close_with_escape()
+{
+  my_dialog d;
+  d.show();
+  QVERIFY(d.isVisible());
+  //Need 100 milliseconds on fast computer
+  //Need 1000 milliseconds on Travis CI
+  QTest::keyClick(&d,Qt::Key_Escape,Qt::NoModifier, 1000);
+  QVERIFY(d.isHidden());
 }
 
 void my_dialog_test::default_construction()
@@ -20,5 +43,5 @@ void my_dialog_test::default_construction()
   d.show();
   QVERIFY(d.isVisible());
   d.close();
-  QVERIFY(!d.isVisible());
+  QVERIFY(d.isHidden());
 }

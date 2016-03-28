@@ -7,8 +7,10 @@ class my_dialog_test: public QObject
 {
     Q_OBJECT
 private slots:
-    void default_construction();
     void close_with_alt_c();
+    //void close_with_alt_f4();
+    void close_with_escape();
+    void default_construction();
 };
 
 #endif // MY_DIALOG_TEST_H

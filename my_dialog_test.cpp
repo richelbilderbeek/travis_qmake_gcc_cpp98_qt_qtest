@@ -7,8 +7,9 @@ void my_dialog_test::close_with_alt_c()
   my_dialog d;
   d.show();
   QVERIFY(d.isVisible());
-  //Need 100 milliseconds!
-  QTest::keyClick(&d,Qt::Key_C,Qt::AltModifier, 100);
+  //Need 100 milliseconds on fast computer
+  //Need 1000 milliseconds on Travis CI
+  QTest::keyClick(&d,Qt::Key_C,Qt::AltModifier, 1000);
   QVERIFY(!d.isVisible());
 
 }

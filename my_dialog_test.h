@@ -7,7 +7,6 @@ class my_dialog_test: public QObject
 {
     Q_OBJECT
 private slots:
-    void default_construction();
     void close_with_x();
 };
 

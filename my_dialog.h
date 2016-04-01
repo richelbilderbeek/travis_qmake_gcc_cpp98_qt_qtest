@@ -3,12 +3,9 @@
 
 #include <QDialog>
 
-namespace Ui {
-  class my_dialog;
-}
+namespace Ui { class my_dialog; }
 
-class my_dialog : public QDialog
-{
+class my_dialog : public QDialog {
   Q_OBJECT
 
 public:

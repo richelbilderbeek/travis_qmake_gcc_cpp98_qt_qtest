@@ -1,4 +1,5 @@
 #include "my_dialog.h"
+#include <QKeyEvent>
 #include "ui_my_dialog.h"
 
 my_dialog::my_dialog(QWidget *parent) :
@@ -6,10 +7,14 @@ my_dialog::my_dialog(QWidget *parent) :
   ui(new Ui::my_dialog)
 {
   ui->setupUi(this);
-  connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(close()));
 }
 
 my_dialog::~my_dialog()
 {
   delete ui;
+}
+
+void my_dialog::keyPressEvent(QKeyEvent * e)
+{
+  if (e->key() == Qt::Key_X) close();
 }

@@ -15,6 +15,9 @@ public:
   explicit my_dialog(QWidget *parent = 0);
   ~my_dialog();
 
+protected:
+  void keyPressEvent(QKeyEvent *);
+
 private:
   Ui::my_dialog *ui;
 };
